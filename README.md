@@ -17,15 +17,15 @@ transformers>=3.4.0
 
 # 项目结构
 ```
-│  eval_func.py  
+│  eval_func.py
 │  LICENSE
 │  predict.py            #预测脚本
-│  README.md     
+│  README.md
 │  train.py              #训练脚本
 │
 ├─checkpoints
 ├─data                   #数据
-│      test.json         
+│      test.json
 │      train.json
 │
 ├─data_preprocessing

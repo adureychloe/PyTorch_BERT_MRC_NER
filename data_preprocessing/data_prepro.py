@@ -31,19 +31,19 @@ def load_data(file_path):
             entity_type_list=list(set([i['type'] for i in entity_list]))
             no_entiy_type_list = [entity_type for entity_type in all_entity_type_list if entity_type not in entity_type_list]
             for entity in entity_list:
-                tmp_sent = entity['type'] +'[SEP]'+ text
+                tmp_sent = entity['type'] +'[SEP]'+ text # 例子：'人物[SEP]李白是唐朝的诗人'
                 if tmp_sent not in sentences:
                     sentences.append(tmp_sent)
-                    arguments.append([entity['argument']])
+                    arguments.append([entity['argument']]) # 例子：['李白']
                     args_has_flag.append(0)
                 else:
                     idx = sentences.index(tmp_sent)
                     arguments[idx].append(entity['argument'])
             for entity_type in no_entiy_type_list:
                 args_has_flag.append(1)
-                tmp_sent = entity_type + '[SEP]' + text
+                tmp_sent = entity_type + '[SEP]' + text 
                 sentences.append(tmp_sent)
-                arguments.append([])       
+                arguments.append([])
         return sentences, arguments, args_has_flag
 
 
